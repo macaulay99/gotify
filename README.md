@@ -175,3 +175,4 @@ func RefreshHandler(c echo.Context) error {
 ## Sample
 
 Please see [here](https://github.com/gericass/gotifySample) for samples
+# go_spotify_util
