@@ -2,7 +2,7 @@ package gotify
 
 import (
 	"encoding/json"
-
+    "strconv"
 	"fmt"
 
 	"github.com/macaulay99/gotify/extensions"
@@ -186,7 +186,7 @@ func (t *Tokens) SeekToPositionInCurrentlyPlayingTrack(position int) error {
 	https://developer.spotify.com/web-api/seek-to-position-in-currently-playing-track/
 	*/
 
-	endpoint := "https://api.spotify.com/v1/me/player/seek?position_ms=" + string(position)
+	endpoint := "https://api.spotify.com/v1/me/player/seek?position_ms=" + strconv.Itoa(position)
 
     print("SeekToPositionInCurrentlyPlayingTrack1 ", endpoint)
 
