@@ -1,4 +1,4 @@
-# gotify [![Codacy Badge](https://api.codacy.com/project/badge/Grade/0951a711ac0a4f5fa9309cfdf41d8e9d)](https://www.codacy.com/app/gericass/gotify?utm_source=github.com&utm_medium=referral&utm_content=gericass/gotify&utm_campaign=badger)
+# gotify [![Codacy Badge](https://api.codacy.com/project/badge/Grade/0951a711ac0a4f5fa9309cfdf41d8e9d)](https://www.codacy.com/app/macaulay99/go_spotify_util?utm_source=github.com&utm_medium=referral&utm_content=macaulay99/go_spotify_util&utm_campaign=badger)
 
 gotify is the wrapper library for [Spotify API](https://developer.spotify.com/web-api/)
 
@@ -123,7 +123,7 @@ gotify supported [Authorization Code Flow](https://developer.spotify.com/web-api
 
 1. Get the `client ID` and `client secret` of your application
 
-2. Run `go get github.com/gericass/gotify`
+2. Run `go get github.com/macaulay99/go_spotify_util`
 
 ## Usage
 
@@ -135,7 +135,7 @@ import (
 
 	"github.com/labstack/echo"
 
-	"github.com/gericass/gotify"
+	"github.com/macaulay99/go_spotify_util"
 )
 
 var Auth gotify.OAuth
@@ -174,5 +174,5 @@ func RefreshHandler(c echo.Context) error {
 
 ## Sample
 
-Please see [here](https://github.com/gericass/gotifySample) for samples
+Please see [here](https://github.com/macaulay99/go_spotify_utilSample) for samples
 # go_spotify_util

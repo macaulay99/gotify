@@ -4,8 +4,8 @@ import (
 	"encoding/json"
 	"strings"
 
-	"github.com/gericass/gotify/extensions"
-	"github.com/gericass/gotify/models"
+	"github.com/macaulay99/go_spotify_util/extensions"
+	"github.com/macaulay99/go_spotify_util/models"
 )
 
 func encodeQuery(q string) string {

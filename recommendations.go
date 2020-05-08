@@ -3,8 +3,8 @@ package gotify
 import (
 	"encoding/json"
 
-	"github.com/gericass/gotify/extensions"
-	"github.com/gericass/gotify/models"
+	"github.com/macaulay99/go_spotify_util/extensions"
+	"github.com/macaulay99/go_spotify_util/models"
 )
 
 // GetRecommendations : the method for GET https://api.spotify.com/v1/recommendations

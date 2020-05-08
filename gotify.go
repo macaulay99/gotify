@@ -8,8 +8,8 @@ import (
 	"net/url"
 	"strings"
 
-	"github.com/gericass/gotify/models"
-	"github.com/gericass/gotify/values"
+	"github.com/macaulay99/go_spotify_util/models"
+	"github.com/macaulay99/go_spotify_util/values"
 )
 
 type (
