@@ -3,8 +3,8 @@ package gotify
 import (
 	"encoding/json"
 
-	"github.com/macaulay99/go_spotify_util/extensions"
-	"github.com/macaulay99/go_spotify_util/models"
+	"github.com/macaulay99/gotify/extensions"
+	"github.com/macaulay99/gotify/models"
 )
 
 // GetTracks : the method for GET https://api.spotify.com/v1/tracks
@@ -13,7 +13,7 @@ func (t *Tokens) GetTracks(trackIDs []string) (*models.Tracks, error) {
 	https://developer.spotify.com/web-api/get-several-tracks/
 	*/
 
-	endpoint := "https://api.spotify.com/v1/tracks/?ids="
+	endpoint := "https://api.spotify.com/v1/tracks/"
 
 	for k, v := range trackIDs {
 		if k == 0 {
