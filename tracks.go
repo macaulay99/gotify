@@ -13,7 +13,7 @@ func (t *Tokens) GetTracks(trackIDs []string) (*models.Tracks, error) {
 	https://developer.spotify.com/web-api/get-several-tracks/
 	*/
 
-	endpoint := "https://api.spotify.com/v1/tracks/"
+	endpoint := "https://api.spotify.com/v1/tracks/ids="
 
 	for k, v := range trackIDs {
 		if k == 0 {
