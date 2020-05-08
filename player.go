@@ -185,14 +185,23 @@ func (t *Tokens) SeekToPositionInCurrentlyPlayingTrack(position int) error {
 	/**
 	https://developer.spotify.com/web-api/seek-to-position-in-currently-playing-track/
 	*/
+	type body struct {
+		Position int `json:"position_ms"`
+	}
+	endpoint := "https://api.spotify.com/v1/me/player/seek"
 
-	endpoint := "https://api.spotify.com/v1/me/player/seek?position_ms=" + string(position)
-
-	res, err := extensions.PutRequest(endpoint, t.AccessToken)
+	reqBody := &body{Position: position}
+    b, err := json.Marshal(reqBody)
+    if err != nil {
+        return err
+    }
+    print("SeekToPositionInCurrentlyPlayingTrack", endpoint)
+	res, err := extensions.PutRequestWithBody(endpoint, t.AccessToken, string(b))
 	if err != nil {
 		return err
 	}
 	if res != values.NoContent {
+		return fmt.Errorf("%d", res)
 		return fmt.Errorf("%d", res)
 	}
 	return nil
