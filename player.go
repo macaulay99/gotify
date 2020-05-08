@@ -97,7 +97,8 @@ func (t *Tokens) TransferUsersPlayback(deviceIDs []string) error {
 	//	return err
 	//}
 
-	print("TransferUsersPlayback test")
+	wjafwfj;jfal
+print("TransferUsersPlayback test")
 	res, err := extensions.PutRequest(endpoint, t.AccessToken)
 	if err != nil {
 		return err
