@@ -96,7 +96,9 @@ func (t *Tokens) TransferUsersPlayback(deviceIDs []string) error {
 	if err != nil {
 		return err
 	}
-	res, err := extensions.PutRequestWithBody(endpoint, t.AccessToken, string(b))
+
+	print("TransferUsersPlayback test")
+	res, err := extensions.PutRequest(endpoint, t.AccessToken)
 	if err != nil {
 		return err
 	}
