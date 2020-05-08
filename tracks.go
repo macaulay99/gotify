@@ -22,7 +22,7 @@ func (t *Tokens) GetTracks(trackIDs []string) (*models.Tracks, error) {
 			endpoint += "," + v
 		}
 	}
-    print("GetTracks", endpoint)
+	print("GetTracks", endpoint)
 	res, err := extensions.GetRequest(endpoint, t.AccessToken)
 	if err != nil {
 		return nil, err

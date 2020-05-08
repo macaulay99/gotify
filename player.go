@@ -2,8 +2,8 @@ package gotify
 
 import (
 	"encoding/json"
-    "strconv"
 	"fmt"
+	"strconv"
 
 	"github.com/macaulay99/gotify/extensions"
 	"github.com/macaulay99/gotify/models"
@@ -97,7 +97,7 @@ func (t *Tokens) TransferUsersPlayback(deviceIDs []string) error {
 	//	return err
 	//}
 
-    print("TransferUsersPlayback test")
+	print("TransferUsersPlayback test")
 	res, err := extensions.PutRequest(endpoint, t.AccessToken)
 	if err != nil {
 		return err
@@ -188,10 +188,10 @@ func (t *Tokens) SeekToPositionInCurrentlyPlayingTrack(position int) error {
 
 	endpoint := "https://api.spotify.com/v1/me/player/seek?position_ms=" + strconv.Itoa(position)
 
-    print("SeekToPositionInCurrentlyPlayingTrack1 ", endpoint)
+	print("SeekToPositionInCurrentlyPlayingTrack1 ", endpoint)
 
 	res, err := extensions.PutRequest(endpoint, t.AccessToken)
-    print("SeekToPositionInCurrentlyPlayingTrack2 ", endpoint)
+	print("SeekToPositionInCurrentlyPlayingTrack2 ", endpoint)
 	if err != nil {
 		return err
 	}
