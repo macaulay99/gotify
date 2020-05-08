@@ -86,12 +86,12 @@ func (t *Tokens) TransferUsersPlayback(deviceIDs []string) error {
 	https://developer.spotify.com/web-api/transfer-a-users-playback/
 	*/
 	type body struct {
-		DeviceIDs []string `json:"device_ids"`
+		DeviceIDs []string `json:"device_id"`
 	}
 
 	endpoint := "https://api.spotify.com/v1/me/player"
 
-	reqBody := &body{DeviceIDs: deviceIDs}
+	#reqBody := &body{DeviceIDs: deviceIDs}
 	b, err := json.Marshal(reqBody)
 	if err != nil {
 		return err
