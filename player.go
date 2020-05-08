@@ -91,11 +91,11 @@ func (t *Tokens) TransferUsersPlayback(deviceIDs []string) error {
 
 	endpoint := "https://api.spotify.com/v1/me/player"
 
-	reqBody := &body{DeviceIDs: deviceIDs}
-	b, err := json.Marshal(reqBody)
-	if err != nil {
-		return err
-	}
+	//reqBody := &body{DeviceIDs: deviceIDs}
+	//b, err := json.Marshal(reqBody)
+	//if err != nil {
+	//	return err
+	//}
 
 	print("TransferUsersPlayback test")
 	res, err := extensions.PutRequest(endpoint, t.AccessToken)
