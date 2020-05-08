@@ -8,8 +8,8 @@ import (
 	"net/url"
 	"strings"
 
-	"github.com/macaulay99/go_spotify_util/models"
-	"github.com/macaulay99/go_spotify_util/values"
+	"github.com/macaulay99/gotify/models"
+	"github.com/macaulay99/gotify/values"
 )
 
 type (

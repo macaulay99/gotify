@@ -5,9 +5,9 @@ import (
 
 	"fmt"
 
-	"github.com/macaulay99/go_spotify_util/extensions"
-	"github.com/macaulay99/go_spotify_util/models"
-	"github.com/macaulay99/go_spotify_util/values"
+	"github.com/macaulay99/gotify/extensions"
+	"github.com/macaulay99/gotify/models"
+	"github.com/macaulay99/gotify/values"
 )
 
 // GetUsersAvailableDevices : the method for GET https://api.spotify.com/v1/me/player/devices
