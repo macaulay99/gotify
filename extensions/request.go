@@ -48,7 +48,7 @@ func PutRequestWithBody(url string, token string, body string) (int, error) {
 	}
 	req.Header.Set("Content-Type", "application/json")
 	req.Header.Add("Authorization", "Bearer "+token)
-	dump, _ := httputil.DumpRequest(req.Request, true)
+	dump, _ := httputil.DumpRequest(req, true)
 	fmt.Println(string(dump))
 
 	client := new(http.Client)
