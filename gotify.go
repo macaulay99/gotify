@@ -74,6 +74,7 @@ type (
 		CheckUsersSavedAlbums(albumIDs []string) (*models.FollowAlbums, error)
 		// personalization
 		GetRecentlyPlayedTracks() (*models.RecentlyPlayedTracks, error)
+
 		// player
 		GetUsersAvailableDevices() (*models.UsersAvailableDevices, error)
 		// FIXME
@@ -82,6 +83,7 @@ type (
 		//GetUsersCurrentlyPlayingTrack() (*models.UsersCurrentlyPlayingTrack, error)
 		TransferUsersPlayback(deviceIDs []string) error
 		StartResumeUsersPlayback() error
+		StartUsersTrackPlay(trackinfo []string, seekms int) error
 		PauseUsersPlayback() error
 		SkipUsersPlaybackToNext() error
 		SkipUsersPlaybackToPrevious() error
@@ -151,7 +153,6 @@ func (c *Client) AuthURL() string {
 			redirectURL += and + v
 		}
 	}
-
 	return redirectURL
 }
 
