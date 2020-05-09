@@ -3,8 +3,6 @@ package gotify
 import (
 	"encoding/json"
 	"fmt"
-	//"strconv"
-
 	"github.com/macaulay99/gotify/extensions"
 	"github.com/macaulay99/gotify/models"
 	"github.com/macaulay99/gotify/values"
@@ -115,6 +113,7 @@ func (t *Tokens) StartResumeUsersPlayback() error {
 	*/
 
 	endpoint := "https://api.spotify.com/v1/me/player/play"
+	// msを指定することで途中から再生できる
 
 	res, err := extensions.PutRequest(endpoint, t.AccessToken)
 	if err != nil {
@@ -125,7 +124,37 @@ func (t *Tokens) StartResumeUsersPlayback() error {
 	}
 	return nil
 }
+// StartUsersTrackPlay : the method for PUT https://api.spotify.com/v1/me/player/play
+func (t *Tokens) StartUsersTrackPlay(trackinfo []string, seekms int) error {
+	/**
+	https://developer.spotify.com/web-api/start-a-users-playback/
+	*/
+    //再生するトラック取得
+    //再生箇所取得
+	endpoint := "https://api.spotify.com/v1/me/player/play"
+	// msを指定することで途中から再生できる
+	type body struct {
+		Uris []string `json:"uris"`
+		Position_ms int `json:"position_ms"`
+	}
 
+    reqBody := &body{Uris: trackinfo,
+                     Position_ms: seekms}
+    fmt.Printf("StartUsersTrackPlay %v¥n", reqBody)
+    b, err := json.Marshal(reqBody)
+    if err != nil {
+        return err
+    }
+
+	res, err := extensions.PutRequestWithBody(endpoint, t.AccessToken, string(b))
+	if err != nil {
+		return err
+	}
+	if res != values.NoContent {
+		return fmt.Errorf("%d", res)
+	}
+	return nil
+}
 // PauseUsersPlayback : the method for PUT https://api.spotify.com/v1/me/player/pause
 func (t *Tokens) PauseUsersPlayback() error {
 	/**
