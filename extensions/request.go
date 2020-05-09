@@ -4,6 +4,7 @@ import (
 	"bytes"
 	"io/ioutil"
 	"net/http"
+	"net/http/httputil"
 )
 
 // GetRequest : receives the endpoint and returns the result of the request
@@ -46,6 +47,9 @@ func PutRequestWithBody(url string, token string, body string) (int, error) {
 	}
 	req.Header.Set("Content-Type", "application/json")
 	req.Header.Add("Authorization", "Bearer "+token)
+    dump, _ := httputil.DumpRequest(req.Request, true)
+    fmt.Println(string(dump))
+
 	client := new(http.Client)
 	resp, err := client.Do(req)
 	if err != nil {
